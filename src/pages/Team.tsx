@@ -1,51 +1,11 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import { useExecutives, useMembers } from "@/hooks/useTeamMembers";
 
 const Team = () => {
-  const executives = [
-    {
-      name: "Alex Thompson",
-      role: "President",
-      bio: "Leading BSS with a vision to create meaningful connections between students and industry professionals. Passionate about entrepreneurship and innovation.",
-    },
-    {
-      name: "Sophia Martinez",
-      role: "Vice President",
-      bio: "Coordinating operations and ensuring seamless event execution. Background in project management and strategic planning.",
-    },
-    {
-      name: "David Kim",
-      role: "Director of Events",
-      bio: "Managing all aspects of speaker events from planning to execution. Committed to delivering exceptional experiences for students and speakers alike.",
-    },
-    {
-      name: "Emma Wilson",
-      role: "Director of Marketing",
-      bio: "Developing our brand presence and engaging our community through creative campaigns and strategic communications.",
-    },
-    {
-      name: "James Patel",
-      role: "Director of Sponsorship",
-      bio: "Building relationships with corporate partners and securing funding to support our mission and expand our impact.",
-    },
-    {
-      name: "Olivia Chen",
-      role: "Director of Finance",
-      bio: "Managing budget, financial planning, and ensuring responsible stewardship of organizational resources.",
-    },
-  ];
-
-  const members = [
-    { name: "Sarah Johnson", role: "Events Coordinator" },
-    { name: "Michael Brown", role: "Marketing Coordinator" },
-    { name: "Rachel Green", role: "Social Media Manager" },
-    { name: "Tom Anderson", role: "Sponsorship Coordinator" },
-    { name: "Lisa Wang", role: "Logistics Coordinator" },
-    { name: "Kevin Nguyen", role: "Design Lead" },
-    { name: "Amanda Foster", role: "Communications" },
-    { name: "Ryan Mitchell", role: "Technology Lead" },
-  ];
+  const { data: executives = [], isLoading: executivesLoading } = useExecutives();
+  const { data: members = [], isLoading: membersLoading } = useMembers();
 
   return (
     <div className="min-h-screen bg-background animate-fade-in">
@@ -70,11 +30,17 @@ const Team = () => {
               Our leadership team works tirelessly to bring world-class speakers to campus
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {executives.map((member, index) => (
-              <TeamMemberCard key={index} {...member} isExecutive />
-            ))}
-          </div>
+          {executivesLoading ? (
+            <div className="text-center text-muted-foreground py-12">Loading team...</div>
+          ) : executives.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {executives.map((member) => (
+                <TeamMemberCard key={member.id} {...member} isExecutive />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-muted-foreground py-12">No executive team members yet.</div>
+          )}
         </div>
       </section>
 
@@ -87,11 +53,17 @@ const Team = () => {
               The backbone of our organization, supporting every aspect of our operations
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {members.map((member, index) => (
-              <TeamMemberCard key={index} {...member} />
-            ))}
-          </div>
+          {membersLoading ? (
+            <div className="text-center text-muted-foreground py-12">Loading members...</div>
+          ) : members.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {members.map((member) => (
+                <TeamMemberCard key={member.id} {...member} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-muted-foreground py-12">No general members yet.</div>
+          )}
         </div>
       </section>
 
