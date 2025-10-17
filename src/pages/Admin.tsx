@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 const Admin = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [email, setEmail] = useState("bssadmin@gmail.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -68,7 +68,6 @@ const Admin = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                disabled
               />
             </div>
             <div className="space-y-2">
