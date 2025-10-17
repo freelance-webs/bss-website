@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
-import logo from "@/assets/bss-logo.png";
+import logo from "@/assets/bss-logo.jpg";
 import { useUpcomingEvents } from "@/hooks/useEvents";
 
 const Index = () => {

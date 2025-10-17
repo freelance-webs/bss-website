@@ -1,5 +1,5 @@
 import { Linkedin, Instagram, Mail } from "lucide-react";
-import logo from "@/assets/bss-logo.png";
+import logo from "@/assets/bss-logo.jpg";
 
 const Footer = () => {
   return (
