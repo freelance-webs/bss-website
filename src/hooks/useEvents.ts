@@ -11,6 +11,8 @@ export interface Event {
   description: string;
   image: string | null;
   is_past: boolean;
+  price: number | null;
+  eventbrite_url: string | null;
 }
 
 export const useEvents = () => {

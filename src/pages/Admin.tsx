@@ -36,40 +36,17 @@ const Admin = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (isSignup) {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/admin`,
-        },
-      });
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-      if (error) {
-        toast({
-          title: "Signup failed",
-          description: error.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Account created!",
-          description: "Please check your email to verify your account.",
-        });
-      }
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+    if (error) {
+      toast({
+        title: "Login failed",
+        description: error.message,
+        variant: "destructive",
       });
-
-      if (error) {
-        toast({
-          title: "Login failed",
-          description: error.message,
-          variant: "destructive",
-        });
-      }
     }
 
     setLoading(false);
@@ -79,9 +56,9 @@ const Admin = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-subtle p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>{isSignup ? "Admin Signup" : "Admin Login"}</CardTitle>
+          <CardTitle>Admin Login</CardTitle>
           <CardDescription>
-            {isSignup ? "Create an admin account" : "Sign in to manage content"}
+            Sign in to manage content
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -107,15 +84,7 @@ const Admin = () => {
               />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? (isSignup ? "Creating account..." : "Logging in...") : (isSignup ? "Sign Up" : "Login")}
-            </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              className="w-full"
-              onClick={() => setIsSignup(!isSignup)}
-            >
-              {isSignup ? "Already have an account? Login" : "Need an account? Sign up"}
+              {loading ? "Logging in..." : "Login"}
             </Button>
           </form>
         </CardContent>

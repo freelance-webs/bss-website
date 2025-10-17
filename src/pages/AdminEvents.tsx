@@ -20,6 +20,8 @@ interface Event {
   description: string;
   image: string | null;
   is_past: boolean;
+  price: number | null;
+  eventbrite_url: string | null;
 }
 
 const AdminEvents = () => {
@@ -35,6 +37,8 @@ const AdminEvents = () => {
     description: "",
     image: "",
     is_past: false,
+    price: 0,
+    eventbrite_url: "",
   });
 
   useEffect(() => {
@@ -106,6 +110,8 @@ const AdminEvents = () => {
       description: event.description,
       image: event.image || "",
       is_past: event.is_past,
+      price: event.price || 0,
+      eventbrite_url: event.eventbrite_url || "",
     });
   };
 
@@ -137,6 +143,8 @@ const AdminEvents = () => {
       description: "",
       image: "",
       is_past: false,
+      price: 0,
+      eventbrite_url: "",
     });
   };
 
@@ -215,6 +223,28 @@ const AdminEvents = () => {
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                   placeholder="https://..."
                 />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="price">Price ($)</Label>
+                  <Input
+                    id="price"
+                    type="number"
+                    value={formData.price}
+                    onChange={(e) => setFormData({ ...formData, price: parseFloat(e.target.value) || 0 })}
+                    placeholder="0 for free"
+                    min="0"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="eventbrite_url">Eventbrite URL (optional)</Label>
+                  <Input
+                    id="eventbrite_url"
+                    value={formData.eventbrite_url}
+                    onChange={(e) => setFormData({ ...formData, eventbrite_url: e.target.value })}
+                    placeholder="https://eventbrite.com/..."
+                  />
+                </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Switch

@@ -11,6 +11,8 @@ interface EventCardProps {
   description: string;
   image?: string;
   isPast?: boolean;
+  price?: number | null;
+  eventbrite_url?: string | null;
 }
 
 const EventCard = ({ title, speaker, date, time, location, description, image, isPast = false }: EventCardProps) => {
@@ -53,12 +55,35 @@ const EventCard = ({ title, speaker, date, time, location, description, image, i
             <MapPin className="h-4 w-4" />
             <span>{location}</span>
           </div>
+          {typeof price !== 'undefined' && price !== null && (
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <span className="font-semibold">
+                {price === 0 ? 'Free' : `${price.toFixed(2)}`}
+              </span>
+            </div>
+          )}
         </div>
 
         {!isPast && (
-          <Button className="w-full mt-4 bg-gradient-hero hover:opacity-90 transition-opacity">
-            Register Now
-          </Button>
+          <div className="space-y-2">
+            {eventbrite_url && eventbrite_url.trim() !== '' ? (
+              <Button 
+                className="w-full mt-4 bg-gradient-hero hover:opacity-90 transition-opacity"
+                onClick={() => window.open(eventbrite_url, '_blank')}
+              >
+                Register via Eventbrite
+              </Button>
+            ) : (
+              <Button 
+                className="w-full mt-4 bg-gradient-hero hover:opacity-90 transition-opacity"
+                onClick={() => {
+                  // Placeholder for general registration if no Eventbrite URL
+                }}
+              >
+                Register Now
+              </Button>
+            )}
+          </div>
         )}
       </CardContent>
     </Card>

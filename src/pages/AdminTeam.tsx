@@ -186,7 +186,7 @@ const AdminTeam = () => {
                   id="linkedin"
                   value={formData.linkedin}
                   onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
-                  placeholder="https://linkedin.com/in/..."
+                  placeholder="https://www.linkedin.com/company/business-speaker-series-club"
                 />
               </div>
               <div className="space-y-2">

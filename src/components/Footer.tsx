@@ -37,7 +37,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Connect With Us</h3>
             <div className="flex gap-4 mb-4">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/business-speaker-series-club" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-primary-foreground/10 p-3 rounded-full hover:bg-primary-foreground/20 transition-colors"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/businessspeakerseries" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-primary-foreground/10 p-3 rounded-full hover:bg-primary-foreground/20 transition-colors"
