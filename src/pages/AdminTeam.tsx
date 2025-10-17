@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
+import ImageUpload from "@/components/ImageUpload";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 
 interface TeamMember {
@@ -172,12 +173,10 @@ const AdminTeam = () => {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="image">Image URL (optional)</Label>
-                <Input
-                  id="image"
-                  value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  placeholder="https://..."
+                <ImageUpload 
+                  onImageUpload={(url) => setFormData({ ...formData, image: url })} 
+                  currentImage={formData.image || undefined} 
+                  folder="team"
                 />
               </div>
               <div className="space-y-2">
