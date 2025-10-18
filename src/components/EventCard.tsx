@@ -58,7 +58,7 @@ const EventCard = ({ title, speaker, date, time, location, description, image, i
           {typeof price !== 'undefined' && price !== null && (
             <div className="flex items-center gap-2 text-muted-foreground">
               <span className="font-semibold">
-                {price === 0 ? 'Free' : `${price.toFixed(2)}`}
+                {price === 0 ? 'Free' : `$ ${price.toFixed(2)}`}
               </span>
             </div>
           )}
