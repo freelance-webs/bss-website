@@ -15,7 +15,7 @@ interface EventCardProps {
   eventbrite_url?: string | null;
 }
 
-const EventCard = ({ title, speaker, date, time, location, description, image, isPast = false }: EventCardProps) => {
+const EventCard = ({ title, speaker, date, time, location, description, image, isPast = false, price, eventbrite_url }: EventCardProps) => {
   return (
     <Card className={`overflow-hidden hover:shadow-medium transition-all duration-300 ${isPast ? 'opacity-75' : ''}`}>
       <div className="aspect-video bg-gradient-hero relative overflow-hidden">

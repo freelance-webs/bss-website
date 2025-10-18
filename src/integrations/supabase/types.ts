@@ -19,10 +19,12 @@ export type Database = {
           created_at: string | null
           date: string
           description: string
+          eventbrite_url: string | null
           id: string
           image: string | null
           is_past: boolean | null
           location: string
+          price: number | null
           speaker: string
           time: string
           title: string
@@ -32,10 +34,12 @@ export type Database = {
           created_at?: string | null
           date: string
           description: string
+          eventbrite_url?: string | null
           id?: string
           image?: string | null
           is_past?: boolean | null
           location: string
+          price?: number | null
           speaker: string
           time: string
           title: string
@@ -45,10 +49,12 @@ export type Database = {
           created_at?: string | null
           date?: string
           description?: string
+          eventbrite_url?: string | null
           id?: string
           image?: string | null
           is_past?: boolean | null
           location?: string
+          price?: number | null
           speaker?: string
           time?: string
           title?: string
