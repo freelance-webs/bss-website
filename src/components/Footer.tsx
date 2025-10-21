@@ -53,14 +53,14 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:contact@bss.com"
+                href="mailto:businessspeakersseries@gmail.com"
                 className="bg-primary-foreground/10 p-3 rounded-full hover:bg-primary-foreground/20 transition-colors"
               >
                 <Mail className="h-5 w-5" />
               </a>
             </div>
             <p className="text-sm opacity-80">
-              Email: contact@bss.ualberta.ca
+              Email: businessspeakersseries@gmail.com
             </p>
           </div>
         </div>
