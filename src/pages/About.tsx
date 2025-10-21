@@ -101,8 +101,8 @@ const About = () => {
               </p>
             </div>
             <div className="bg-card border border-border rounded-lg p-6 shadow-soft">
-              <div className="text-3xl font-bold text-accent mb-2">12+</div>
-              <div className="text-sm text-muted-foreground mb-2">Events Per Year</div>
+              <div className="text-3xl font-bold text-accent mb-2">20+</div>
+              <div className="text-sm text-muted-foreground mb-2">Events Hosted</div>
               <p className="text-sm text-muted-foreground">
                 Consistent, high-quality programming throughout the academic year
               </p>

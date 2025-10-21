@@ -71,8 +71,8 @@ const Index = () => {
                   <Calendar className="h-8 w-8 text-accent" />
                 </div>
               </div>
-              <div className="text-4xl font-bold text-foreground mb-2">12+</div>
-              <div className="text-muted-foreground">Events Per Year</div>
+              <div className="text-4xl font-bold text-foreground mb-2">20+</div>
+              <div className="text-muted-foreground">Events Hosted</div>
             </div>
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">

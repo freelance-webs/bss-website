@@ -157,16 +157,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-subtle border border-border rounded-lg p-6 mt-8">
-                  <h3 className="font-semibold text-foreground mb-3">Office Hours</h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p>Saturday - Sunday: Closed</p>
-                    <p className="mt-4 text-xs">
-                      *Hours may vary during exam periods and university holidays
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
