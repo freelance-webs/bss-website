@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { LogOut, Calendar, Users } from "lucide-react";
+import { LogOut, Calendar, Users, Award } from "lucide-react";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -61,6 +61,15 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                 >
                   <Users className="h-4 w-4" />
                   Team
+                </Button>
+              </Link>
+              <Link to="/admin/sponsors">
+                <Button 
+                  variant={location.pathname === "/admin/sponsors" ? "default" : "ghost"}
+                  className="gap-2"
+                >
+                  <Award className="h-4 w-4" />
+                  Sponsors
                 </Button>
               </Link>
             </div>
