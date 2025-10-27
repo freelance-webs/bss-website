@@ -7,11 +7,11 @@ const Sponsors = () => {
   const { data: sponsors, isLoading } = useSponsors();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background animate-fade-in">
       <Navigation />
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
