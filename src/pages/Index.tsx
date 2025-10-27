@@ -23,7 +23,7 @@ const Index = () => {
                 University of Alberta Student Organization
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Connect with Industry Leaders
+                Connecting Students with Industry Leaders
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
                 Business Speaker Series brings together students and accomplished professionals to inspire, educate, and empower the next generation of business leaders through engaging speaker events and networking opportunities.
